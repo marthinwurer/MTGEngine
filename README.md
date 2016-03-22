@@ -1,1 +1,1 @@
-"# MTGEngine" 
+# MTGEngine
