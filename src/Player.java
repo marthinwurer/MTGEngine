@@ -101,6 +101,15 @@ public class Player {
     }
 
 	
-	
+
+    public int getManaProducable(){
+        int total = 0;
+        for(Card onBattlefield : battlefield){
+            for( ManaAbility ability: onBattlefield.getManaAbilities()){
+                total += ability.getManaProduced();
+            }
+        }
+        return total;
+    }
 
 }

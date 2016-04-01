@@ -21,4 +21,6 @@ public interface MoveChooser {
 
     boolean mulligan(List<Card> hand, List<Card> decklist);
 
+    Choice payMana(List<Choice> manaAbilities, int leftToPlay, int paid, MTGGame game);
+
 }
