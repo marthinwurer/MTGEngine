@@ -1,7 +1,7 @@
 /**
  * This class represents a basic, vanilla creature in Magic: the Gathering
  */
-public class Creature {
+public class Creature extends Card{
 	
 	private int power; // the creature's power
 	private int toughness; // the creature's toughness
@@ -9,6 +9,7 @@ public class Creature {
 	private boolean tapped; // whether this creature is tapped or not
 
 	public Creature(int power, int toughness) {
+		super("", 0);
 		this.power = power;
 		this.toughness = toughness;
 		this.damage = 0;

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +17,7 @@ public class Expert implements MoveChooser {
     }
 
     @Override
-    public Choice declareAtackers(List<Choice> choices, MTGGame game) {
+    public ArrayList<Creature> declareAtackers(List<Choice> choices, MTGGame game) {
         return null;
     }
 

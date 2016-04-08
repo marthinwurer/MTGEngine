@@ -1,4 +1,4 @@
-import javax.swing.event.ListDataEvent;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,9 +15,9 @@ public interface MoveChooser {
 
     Choice priority(List<Choice> choices, MTGGame game);
 
-    Choice declareAtackers(List<Choice> choices, MTGGame game);
+    ArrayList<Creature> declareAtackers(List<Choice> choices, MTGGame game);
 
-    Choice declareBlockers(List<Choice> choices, MTGGame game);
+    ArrayList<BlockerChoice> declareBlockers(List<Choice> choices, MTGGame game);
 
     boolean mulligan(List<Card> hand, List<Card> decklist);
 

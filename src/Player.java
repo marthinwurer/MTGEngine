@@ -69,6 +69,10 @@ public class Player {
         drawToHandSize();
     }
 
+    public MoveChooser getController() {
+        return controller;
+    }
+
     public int getNumMulligans(){
         return numMulligans;
     }
@@ -96,7 +100,7 @@ public class Player {
 
     private void drawToHandSize(){
         for( int ii = 0; ii < 7 - numMulligans; ii++ ){
-            hand.add(library.pop());
+            this.drawCard();
         }
     }
 
@@ -112,4 +116,18 @@ public class Player {
         return total;
     }
 
+    public void drawCard() {
+        hand.add(library.pop());
+    }
+
+    public ArrayList<Choice> getPossibleAttackers(MTGGame mtgGame) {
+        ArrayList<Choice> choices = new ArrayList<>();
+        for(Card permanent: battlefield){
+            if( permanent instanceof Creature && !permanent.summoningSick ){
+                choices.add(new DeclareAttackerChoice((Creature) permanent));
+            }
+        }
+        choices.add(new PassChoice());
+        return choices;
+    }
 }
